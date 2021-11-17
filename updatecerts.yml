@@ -1,0 +1,6 @@
+---
+
+- name: Update certs
+  hosts: all
+  roles:
+    - { role: letsencrypt-client, plex_hostname: "plex.viskum-net.dk", become: yes }

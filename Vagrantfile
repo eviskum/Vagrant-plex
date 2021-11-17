@@ -31,6 +31,12 @@ Vagrant.configure("2") do |config|
   config.vm.provision "plex", type: "ansible", run: "never" do |ansible|
     ansible.playbook = "plex-provision.yml"
   end
+
+  config.vm.provision "updatecerts", type: "ansible", run: "never" do |ansible|
+    ansible.playbook = "updatecerts.yml"
+    ansible.tags = "plex"
+  end
+  
   
   # config.vm.provision "ansible" do |ansible|
   #   ansible.playbook = "playbook.yml"
